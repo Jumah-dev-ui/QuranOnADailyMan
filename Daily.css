@@ -250,7 +250,7 @@ textarea{resize:vertical}
   .home-grid{grid-template-columns:1fr}
   .two-col{grid-template-columns:1fr}
   .cta-inner{flex-direction:column;align-items:flex-start;gap:20px}
-  .home-section{background-image: url(jubaakram.jpg);}
+  .home-section{background-image: url(Bestquranacademy.jpg);}
   .cta-section{padding:50px 0;
     padding-left: 20px;
   }
@@ -297,5 +297,6 @@ textarea{resize:vertical}
  
   display: block;
 }
+
 
   }
