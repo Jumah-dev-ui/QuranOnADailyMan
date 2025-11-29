@@ -1,0 +1,301 @@
+:root{
+  --green:#2f9d57;
+  --dark:#12312a;
+  --muted:#f6f2ec;
+  --accent:#6ee08a;
+  --card-shadow: 0 8px 18px rgba(0,0,0,0.08);
+  --max-width:1200px;
+  --radius:12px;
+  --transition:300ms cubic-bezier(.2,.9,.3,1);
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+/* Removed global overflow rules that clipped positioned elements (nav dropdown) */
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;
+  
+  background:#e5e9d7;color:#122;line-height:1.45}
+/* ---------- BASE SHARED STYLING ---------- */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+.logo span {
+  font-size: 20px;
+  font-weight: 650;
+  color: #0E4330;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+/* ---------- DESKTOP NAVBAR STYLING ---------- */
+
+.navbar-desktop {
+  background: #ffffffee; /* soft transparency */
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #ddd;
+}
+
+.nav-links-desktop {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-links-desktop a {
+  text-decoration: none;
+  color: #0E4330;
+  font-weight: 500;
+  transition: color 0.25s ease;
+}
+
+.nav-links-desktop a:hover {
+  color: #13BAC7;
+}
+
+
+/* ---------- MOBILE NAVBAR ---------- */
+
+.navbar-mobile {
+  display: none;
+  background: #ffffffee;
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #ddd;
+}
+
+.mobile-toggle {
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 5px;
+  color: #0E4330;
+  transition: opacity 0.25s ease;
+}
+
+.mobile-toggle:active {
+  opacity: 0.6;
+}
+
+
+/* ---------- Mobile Menu (The Magic) ---------- */
+
+.nav-links-mobile {
+  position: absolute;
+  top: 70px;          /* FIXED: won't shift navbar */
+  right: 10px;
+  width: 210px;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  gap: 15px;
+
+  background: transparent;
+  padding: 0px 80px;
+  padding-right: 0%;
+  border-radius: 12px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.12);
+
+  opacity: 1;
+  display: none;
+
+}
+
+/* Active state — smooth slide down */
+nav-links-mobile.active {
+  opacity: 1;
+  transform: translateY(20px);
+  pointer-events: auto;
+}
+
+/* Mobile link styling */
+.nav-links-mobile a {
+  text-decoration: none;
+  font-weight: 500;
+  color: #e9db18;
+  padding: 8px 0;
+  border-bottom: 1px solid #e7e7e7;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+/* Remove last border */
+.nav-links-mobile li:last-child a {
+  border-bottom: none;
+}
+
+/* Hover effect */
+.nav-links-mobile a:hover {
+  color: #13BAC7;
+  transform: translateX(4px);
+}
+
+
+
+/* Home section */
+.home-section{
+  min-height:70vh;
+  background-image: url(banner.png); /* replace with your image */
+  background-size:cover;background-position:center;
+  display:flex;align-items:center;color:white;
+}
+.home-overlay{background:linear-gradient(90deg, rgba(0,0,0,0.35), rgba(0,0,0,0.25))}
+.home-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:60px 20px}
+/*.home-left{a}*/
+.home-right{align-self:center;padding:40px}
+.home-right h1{font-size:36px;margin:0 0 10px}
+.home-right p{margin:0 0 18px;font-size:16px}
+
+/* Generic sections */
+.section{padding:56px 0}
+.section-title{text-align:center;margin:0 0 24px;font-size:26px;color:var(--dark)}
+
+/* Two column about */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
+.placeholder{height:420px;border-radius:12px;background-image:url(quran.jpg);background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;font-size:46px;color:var(--green)}
+
+/* Services */
+.services-row{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.service-card{
+  background:white;border-radius:12px;padding:14px;text-align:left;box-shadow:var(--card-shadow);transition:transform var(--transition), box-shadow var(--transition);
+  display:flex;flex-direction:column;align-items:stretch;overflow:hidden;
+}
+.service-card img{width:100%;height:130px;object-fit:cover;border-radius:8px}
+.service-card h3{margin:12px 0 8px}
+.service-card p{flex:1;margin:0 0 12px;color:#525b55}
+.service-card .btn{align-self:flex-start}
+
+/* scale significantly on hover */
+.service-card:hover{transform:scale(1.12);z-index:5;box-shadow:0 18px 40px rgba(10,10,10,0.12)}
+
+/* Reviews - upside down pentagon */
+.reviews-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
+.review-card{
+  width:100%;padding:28px 14px 20px;background:linear-gradient(180deg,#d6e3fc,#aceca4);border-radius:10px;clip-path: polygon(50% 0%, 100% 25%, 80% 100%, 20% 100%, 0% 25%); /* upside-down pentagon-like */
+  text-align:center;box-shadow:var(--card-shadow);display:flex;flex-direction:column;align-items:center;gap:10px;padding-top:40px;
+}
+.review-avatar{width:72px;height:72px;border-radius:999px;border:4px solid white;object-fit:cover;margin-top:-40px}
+.stars{font-weight:700;color:var(--green);letter-spacing:2px}
+.review-text{margin:6px 0 0;padding:0 8px;color:#333}
+
+/* Contact form */
+.contact-form{max-width:760px;margin:0 auto}
+.form-row{display:flex;gap:12px;margin-bottom:12px}
+.form-row input[type="text"],
+.form-row input[type="email"],
+.form-row input[type="tel"],
+.form-row textarea,
+#nlEmail{
+  width:100%;padding:12px;border-radius:10px;border:1px solid #e0e6e0;font-size:15px;
+}
+textarea{resize:vertical}
+.form-status{margin-top:8px;color:var(--dark)}
+
+/* CTA Section (three-column footer-like) */
+.cta-section{background:linear-gradient(135deg,#2d1b4e,#1a0f2e);padding:60px 0;
+  padding-left: 60px;
+  color:white}
+.cta-inner{display:flex;align-items:flex-start;justify-content:space-between;gap:40px}
+.cta-col{flex:1;min-width:210px}
+.cta-col h4{margin:0 0 12px;font-size:1.05rem;font-weight:700}
+.social-list{display:flex;flex-wrap:wrap;gap:10px}
+.social-btn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;border-radius:10px;background:rgba(255,255,255,0.04);color:white;text-decoration:none;font-weight:800}
+.social-btn:hover{background:rgba(255,255,255,0.10)}
+.social-btn svg{width:20px;height:20px;display:block;fill:currentColor}
+.quick-links{list-style:none;padding:0;margin:0}
+.quick-links li{margin-bottom:10px}
+.quick-links a{color:rgba(255,255,255,0.92);text-decoration:none}
+.quick-links a:hover{text-decoration:underline}
+.cta-desc{margin:0 0 12px;opacity:0.95}
+.contact-block{display:flex;flex-direction:column;gap:8px}
+.contact-line{display:flex;gap:10px;align-items:center;color:rgba(255,255,255,0.95)}
+.contact-icon{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:6px;background:rgba(255,255,255,0.04);font-size:14px}
+.btn.primary-large{background:#8b5cf6;color:white;padding:12px 26px;font-size:1rem;border-radius:12px;transition:background 0.3s ease}
+.btn.primary-large:hover{background:#a78bfa}
+.info .btn.primary-large{margin-bottom:8px}
+
+/* Buttons */
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;border:0;background:#eee;color:var(--dark);text-decoration:none;font-weight:700}
+.btn.primary{background:var(--dark);color:white}
+.btn.highlight{background:var(--green);color:white}
+
+/* Footer */
+.site-footer{padding:18px 0;text-align:center;background:#fff;border-top:1px solid rgba(0,0,0,0.04)}
+
+/* Responsive */
+@media (max-width:1000px){
+  .services-row{grid-template-columns:repeat(2,1fr)}
+  .reviews-row{grid-template-columns:1fr 1fr}
+  .home-grid{grid-template-columns:1fr}
+  .two-col{grid-template-columns:1fr}
+  .cta-inner{flex-direction:column;align-items:flex-start;gap:20px}
+  .home-section{background-image: url(jubaakram.jpg);}
+  .cta-section{padding:50px 0;
+    padding-left: 20px;
+  }
+  .cta-col{min-width:auto}
+}
+@media (max-width:700px){
+  .nav-toggle{display:inline-block}
+  .nav-list{display:none;flex-direction:column;background:white;position:absolute;right:18px;top:64px;padding:10px;border-radius:8px;box-shadow:var(--card-shadow);z-index:9999}
+  .nav-list.show{display:flex}
+  .services-row{grid-template-columns:1fr}
+  .reviews-row{grid-template-columns:1fr}
+  .home-right h1{font-size:26px}
+  .home-section{min-height:56vh}
+  
+  /* CTA/Footer responsive optimizations */
+  .cta-section{padding:40px 0;
+    padding-left: 20px;
+  }
+  .cta-inner{flex-direction:column;gap:30px}
+  .cta-col{min-width:auto}
+  .cta-col h4{font-size:1rem;margin-bottom:10px}
+  .social-list{gap:8px}
+  .social-btn{width:40px;height:40px}
+  .social-btn svg{width:18px;height:18px}
+  .quick-links li{margin-bottom:8px;font-size:14px}
+  .cta-desc{font-size:14px;margin-bottom:8px}
+  .contact-line{font-size:13px;gap:8px}
+  .contact-icon{width:24px;height:24px;font-size:12px}
+  .btn.primary-large{padding:10px 20px;font-size:0.95rem;display:block;width:100%}
+}
+
+@media (max-width:832px){
+  .navbar-desktop{display:none}
+  .navbar-mobile{display:block;
+  position: sticky;}
+  .btn.highlight {
+    background: var(--green);
+    color: white;
+    display: flex;
+    align-self: center;
+    justify-self: center;
+}
+.nav-links-mobile {
+ 
+  display: block;
+}
+
+  }

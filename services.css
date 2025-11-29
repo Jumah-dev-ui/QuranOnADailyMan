@@ -1,0 +1,324 @@
+/* ==========================================
+   GLOBAL BRAND STYLING – @CAM
+   ========================================== */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap');
+
+/* Color Variables */
+:root {
+    --cam-green: #2ECC71;
+    --deep-navy: #0D1B2A;
+    --soft-lime: #C8FF86;
+    --white: #ffffff;
+    --light-grey: #f2f2f2;
+}
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--white);
+    font-family: 'Inter', sans-serif;
+    color: var(--deep-navy);
+    line-height: 1.6;
+}
+
+/* ==========================================
+   NAVBAR
+   ========================================== */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: var(--deep-navy);
+    color: var(--white);
+    padding: 20px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+}
+
+nav .logo {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 28px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--cam-green);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: var(--cam-green);
+}
+
+/* ==========================================
+   SECTIONS GENERAL
+   ========================================== */
+
+section {
+    padding: 100px 80px;
+}
+
+h1, h2, h3 {
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* ==========================================
+   HOME SECTION
+   ========================================== */
+
+#home {
+    height: 100vh;
+    background: url("your-background.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--white);
+}
+
+#home .left {
+    width: 50%;
+}
+
+#home .right {
+    width: 50%;
+    background: rgba(0, 0, 0, 0.45);
+    padding: 40px;
+    border-radius: 12px;
+}
+
+#home h1 {
+    font-size: 52px;
+    margin-bottom: 20px;
+}
+
+#home button {
+    padding: 14px 28px;
+    background: var(--cam-green);
+    border: none;
+    color: var(--deep-navy);
+    font-weight: 700;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#home button:hover {
+    transform: scale(1.1);
+}
+
+/* ==========================================
+   ABOUT SECTION
+   ========================================== */
+
+#about {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+#about .left,
+#about .right {
+    width: 50%;
+}
+
+#about button {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background: var(--soft-lime);
+    color: var(--deep-navy);
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+#about button:hover {
+    background: var(--cam-green);
+}
+
+/* ==========================================
+   SERVICES SECTION
+   ========================================== */
+
+#services {
+    text-align: center;
+}
+
+.services-container {
+    display: flex;
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.service-box {
+    width: 25%;
+    background: var(--light-grey);
+    padding: 25px;
+    border-radius: 16px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.service-box:hover {
+    transform: scale(1.13);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-box img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.service-box button {
+    margin-top: 20px;
+    padding: 10px 22px;
+    background: var(--cam-green);
+    border: none;
+    color: var(--deep-navy);
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* ==========================================
+   REVIEWS SECTION
+   ========================================== */
+
+.reviews-container {
+    display: flex;
+    gap: 30px;
+}
+
+.review {
+    width: 33%;
+    background: var(--white);
+    padding: 20px;
+    clip-path: polygon(50% 100%, 100% 60%, 80% 0%, 20% 0%, 0% 60%);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.review img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 4px solid var(--cam-green);
+    margin-bottom: 10px;
+}
+
+/* ==========================================
+   CONTACT SECTION
+   ========================================== */
+
+#contact form {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contact input,
+#contact textarea {
+    padding: 12px;
+    border: 2px solid var(--deep-navy);
+    border-radius: 6px;
+}
+
+#contact button {
+    padding: 12px;
+    background: var(--cam-green);
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 6px;
+}
+
+/* ==========================================
+   NEWSLETTER SECTION
+   ========================================== */
+
+.newsletter-box {
+    background: var(--deep-navy);
+    color: var(--white);
+    padding: 50px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.newsletter-box input {
+    padding: 12px;
+    width: 60%;
+    border-radius: 6px;
+    border: none;
+}
+
+.newsletter-box button {
+    padding: 12px 24px;
+    background: var(--cam-green);
+    border: none;
+    color: var(--deep-navy);
+    font-weight: 700;
+    margin-left: 10px;
+    border-radius: 6px;
+}
+
+/* ==========================================
+   RESPONSIVENESS
+   ========================================== */
+
+@media (max-width: 900px) {
+    nav ul {
+        display: none;
+    }
+
+    #home {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #about {
+        flex-direction: column;
+    }
+
+    .services-container {
+        flex-direction: column;
+    }
+
+    .service-box {
+        width: 100%;
+    }
+
+    .reviews-container {
+        flex-direction: column;
+    }
+
+    #contact form {
+        width: 95%;
+    }
+}

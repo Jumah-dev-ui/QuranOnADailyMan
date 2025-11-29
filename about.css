@@ -1,0 +1,112 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f7f7f7;
+  color: #333;
+}
+
+.about-header {
+  background: linear-gradient(135deg, #007b5e, #009f7d);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.profile-section {
+  display: flex;
+  gap: 40px;
+  padding: 60px 10%;
+  align-items: center;
+  background: white;
+}
+
+.profile-img-container {
+  flex: 1;
+  text-align: center;
+}
+
+.profile-img {
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid #009f7d;
+}
+
+.profile-content {
+  flex: 2;
+}
+
+.name {
+  font-size: 32px;
+  margin-bottom: 6px;
+}
+
+.role {
+  font-size: 18px;
+  color: #009f7d;
+  margin-bottom: 20px;
+}
+
+.motivation {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.mission-section,
+.offer-section,
+.values-section {
+  padding: 60px 10%;
+  background: #f7f7f7;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #007b5e;
+}
+
+.mission-list li {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.offer-cards {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 6px solid #009f7d;
+}
+
+.values-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.value {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.about-footer {
+  background: #003f2e;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  margin-top: 40px;
+}
+
+@media (max-width: 820px) {
+  .profile-section {
+    flex-direction: column;
+    text-align: center;
+  }
+}
